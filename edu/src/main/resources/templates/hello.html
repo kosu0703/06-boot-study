@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>vscode 한줄 복사 : shift + alt + 방향키</p>
+    <p>vscode 한줄 이동 : alt + 방향키</p>
+    <p>vscode 한줄 삭제 : ctrl + shift + k</p>
+
+    <hr>
+    
+    <p>"${name}" 님 안녕하세요</p>
+    <p th:text="${name} + '님 안녕하세요~'"></p>
+    <p th:text="'나는 ' + ${age} + '살 입니다.'"></p>
+
+    
+
+</body>
+</html>
