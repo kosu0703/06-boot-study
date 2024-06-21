@@ -27,7 +27,7 @@ public class SecurityConfig {
     public SecurityConfig(UserDetailsService userDetailsService, JwtRequestFilter jwtRequestFilter){
         this.userDetailsService = userDetailsService;
         this.jwtRequestFilter = jwtRequestFilter;
-    }
+    }   
 
 
     @Bean
@@ -36,7 +36,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(authorize -> authorize
-                    .requestMatchers("/api/login", "/api/logout", "/api/guestbook").permitAll()
+                    .requestMatchers("/api/login", "/api/logout", "/api/token", "/api/guestbook", "/api/kakaologin", "/api/naverlogin").permitAll()
                     .anyRequest().authenticated()   // 로그인, 로그아웃만 허용 + 방명록
                 )
                 .logout(logout -> logout
